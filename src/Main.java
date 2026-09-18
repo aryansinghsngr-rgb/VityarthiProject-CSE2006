@@ -1,9 +1,6 @@
 import java.util.*;
 
-/**
- * Entry point: a menu-driven command-line interface for the
- * Library Management System.
- */
+
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in);
@@ -41,8 +38,7 @@ public class Main {
                 System.out.println("Error: please enter a valid number.");
             }
 
-            // Persist after every successful operation so data isn't lost
-            // if the program is closed unexpectedly.
+           
             if (running) {
                 library.saveData();
             }
