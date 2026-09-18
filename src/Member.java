@@ -1,6 +1,4 @@
-/**
- * Represents a registered library member.
- */
+
 public class Member {
     private final String memberId;
     private String name;
@@ -38,9 +36,7 @@ public class Member {
         }
     }
 
-    /**
-     * Format: id|name|booksIssuedCount
-     */
+    
     public String toDataLine() {
         return String.join("|", memberId, name, String.valueOf(booksIssuedCount));
     }
