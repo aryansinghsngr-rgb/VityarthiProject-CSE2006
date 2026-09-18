@@ -1,12 +1,10 @@
-/**
- * Represents a single book in the library's catalog.
- */
+
 public class Book {
     private final String bookId;
     private String title;
     private String author;
     private boolean issued;
-    private String issuedTo; // member ID, or null if not issued
+    private String issuedTo; 
 
     public Book(String bookId, String title, String author, boolean issued, String issuedTo) {
         this.bookId = bookId;
@@ -50,10 +48,7 @@ public class Book {
         this.issuedTo = null;
     }
 
-    /**
-     * Serializes this book to a single pipe-delimited line for file storage.
-     * Format: id|title|author|issued|issuedTo
-     */
+    
     public String toDataLine() {
         return String.join("|",
                 bookId,
@@ -63,9 +58,7 @@ public class Book {
                 issuedTo == null ? "" : issuedTo);
     }
 
-    /**
-     * Parses a pipe-delimited data line back into a Book object.
-     */
+    
     public static Book fromDataLine(String line) {
         String[] parts = line.split("\\|", -1);
         String id = parts[0];
