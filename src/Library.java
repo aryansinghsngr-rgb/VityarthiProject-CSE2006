@@ -1,11 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-/**
- * Core service class that manages books and members in memory,
- * enforces library rules, and persists data to plain text files
- * so state survives between runs.
- */
+
 public class Library {
 
     private static final int MAX_BOOKS_PER_MEMBER = 3;
@@ -21,9 +17,7 @@ public class Library {
         this.membersFilePath = membersFilePath;
     }
 
-    // ---------------------------------------------------------------
-    // Persistence
-    // ---------------------------------------------------------------
+    
 
     public void loadData() {
         loadBooks();
@@ -91,9 +85,7 @@ public class Library {
         }
     }
 
-    // ---------------------------------------------------------------
-    // Book management
-    // ---------------------------------------------------------------
+   
 
     public void addBook(String id, String title, String author) throws LibraryException {
         if (books.containsKey(id)) {
@@ -128,10 +120,7 @@ public class Library {
         return results;
     }
 
-    // ---------------------------------------------------------------
-    // Member management
-    // ---------------------------------------------------------------
-
+    
     public void addMember(String id, String name) throws LibraryException {
         if (members.containsKey(id)) {
             throw new LibraryException("A member with ID '" + id + "' already exists.");
@@ -143,9 +132,7 @@ public class Library {
         return members.values();
     }
 
-    // ---------------------------------------------------------------
-    // Issue / return workflow
-    // ---------------------------------------------------------------
+    
 
     public void issueBook(String bookId, String memberId) throws LibraryException {
         Book book = books.get(bookId);
